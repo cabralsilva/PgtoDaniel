@@ -1,0 +1,15 @@
+Options -Indexes
+DirectoryIndex views/login.php
+
+RewriteEngine on
+	RewriteRule ^views/?$ views/login.php [NC]
+	RewriteRule ^controllers/?$ views/login.php [NC]
+	RewriteRule ^services/?$ views/login.php [NC]
+	RewriteRule ^models/?$ views/login.php [NC]
+	RewriteRule ^resources/?$ views/login.php [NC]
+	RewriteRule ^util/?$ views/login.php [NC]
+	RewriteRule ^pagamentos-pendentes/?$ views/home.php [NC]
+	RewriteRule ^buscas-pagamentos/?$ views/consultas.php [NC]
+	RewriteRule ^novo-boleto/?$ views/formtransacao.php [NC]
+	RewriteRule ^logout/?$ views/logout.php [NC]
+	RewriteRule ^login/?$ views/login.php [NC]

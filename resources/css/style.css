@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+.principal {
+	margin-top:150px;
+}
+
+
+.headtabela{
+	font-weight:bold;
+}
+
+.headpedido{
+	font-size:20px;
+	font-weight:bold;
+}
+
+.headhistorico{
+    font-size:10px;
+    font-weight:bold;
+}
+
+.text-top{
+    vertical-align: top;
+}
+
+.zero{
+    padding: 0px !important;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+        border-top: 1px solid #ddd !important;
+}
+
+#table4{
+    margin-bottom: 0px !important;
+}
+
+.form-bottom{
+    position: absolute;
+    bottom: 0px;
+}
+.nome-empresa{
+    font-size: 35px;
+}
+.nome-pagina{
+    font-size: 15px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+form{
+    padding: 15px;
+}
+
+.form-group{
+    padding-bottom: 10px;
+}
+
+.usuario{
+    float: right;
+}
+
+@media (min-width: 1400px){
+    .containerrelatorio{
+        width: 100% !important;
+    }
+}
+@media (min-width: 1600px){
+    .containerrelatorio{
+        width: 100% !important;
+    }
+}
+
+.labelrangedate{
+    padding: 0px;
+    font-size: 10px;
+}
+
+.input-sm{
+    height: 34px !important;
+    padding: 0px;
+    font-size: 8px;
+}
+
+.input-sm2{
+    height: 34px !important;
+    padding: 0px;
+    font-size: 12px;
+}
+
+.labelcifrao{
+    padding: 0px;
+}
+
+.inputvalortransacao{
+    padding: 6px 0px;
+    font-size: 11px;
+}
+
+.linha_relatorio{
+    font-size: 12px;
+}
+
+.navegacao{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.direita{
+    float: right;
+}
+
+.fixar {
+    position:fixed;
+    margin-top: 0px !important;
+}
+
+.modal-footer{
+	margin-top: 50px;
+}
+
+.linha-form{
+	    margin-top: 30px;	
+}
+
+.form-control{
+	border-radius: 3px 3px 3px 3px !important;
+}
+.input-vencimento input{
+	text-align: center;
+}
+.inscricaopagador{
+	padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.ceppagador{
+	width: 115%
+}
+
+.alignright{
+    text-align: right;
+}
+
+.moredetailpayment{
+	padding: 0px !important;	
+}
+
+.valign{
+	vertical-align: middle !important;
+}
+
+.tab-principal{
+	font-size: 18px !important;
+}
+
+.linha-cb-preta {
+  height: 50px;/*Altura da linha*/
+/*   border-left: 1px solid;Adiciona borda esquerda na div como ser fosse uma linha. */
+  border-color: black !important;
+  display:inline-block;
+  margin-left: -4px;
+}
+
+.linha-cb-branca {
+  height: 50px;/*Altura da linha*/
+/*   border-left: 1px solid;Adiciona borda esquerda na div como ser fosse uma linha. */
+  border-color: white !important;
+  display:inline-block;
+  margin-left: -4px;
+}
+
+.modal-dialog{
+	width: 70% !important;
+}
+
+.modal-body{
+	overflow-y: visible !important;	
+}
+
+.drop-down-canto{
+	left: -100% !important;
+}
+
+.frmFiltros{
+	font-size: 10px !important;
+}
+
+.labelrangedate{
+	width: 10% !important;
+}
+
+#btnFiltrar{
+	width: 100% !important;
+}
+
+.alert-pesquisa{
+	display: inline-block !important;
+}
