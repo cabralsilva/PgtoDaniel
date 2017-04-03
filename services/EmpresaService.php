@@ -29,13 +29,13 @@ class EmpresaService {
 	
 	public function getInfoEmpresaiBoltPag($idUsuario){
 		try {
-			$sql = "SELECT empresa.CODIGO, empresa.NOME, empresa.CNPJ, empresa.SENHA, EMPRESA.HOST_BANCO, EMPRESA.NOME_BANCO, EMPRESA.USER_BANCO, EMPRESA.SENHA_BANCO, sistemas.*  
+			$sql = "SELECT empresa.CODIGO, empresa.NOME, empresa.CNPJ, empresa.SENHA, empresa.HOST_BANCO, empresa.NOME_BANCO, empresa.USER_BANCO, empresa.SENHA_BANCO, sistemas.*  
 						FROM empresa
 					INNER JOIN empresa_sistema ON empresa.CODIGO = empresa_sistema.fk_empresa
 					INNER JOIN sistemas ON sistemas.id_sistema = empresa_sistema.fk_sistema
 					INNER JOIN usuario_empresa_sistema ON usuario_empresa_sistema.fk_empresa_sistema = empresa_sistema.id_empresa_sistema
 					INNER JOIN usuarios ON usuarios.id_usuario = usuario_empresa_sistema.fk_usuario
-					WHERE USUARIOS.id_usuario = $idUsuario AND sistemas.id_sistema = 1";
+					WHERE usuarios.id_usuario = $idUsuario AND sistemas.id_sistema = 1";
 // 			echo $sql;
 // 			die;
 			$empresa = $this->banco->getConexaoBanco ()->query ( $sql );

@@ -64,8 +64,8 @@ class BancoMysql{
 				* Caso o número de linhas retornadas seja 1 o login é válido,
 				* caso 0 ou mais de 1, inválido.
 				*/
-			$sql = "SELECT USUARIOS.id_usuario, USUARIOS.nome_usuario, USUARIOS.email_usuario, USUARIOS.senha_usuario FROM USUARIOS
-						WHERE USUARIOS.email_usuario = '" . $login . "'";
+			$sql = "SELECT usuarios.id_usuario, usuarios.nome_usuario, usuarios.email_usuario, usuarios.senha_usuario FROM usuarios
+						WHERE usuarios.email_usuario = '" . $login . "'";
 			$usuario = $this->conexao_banco->query($sql);
 			//$usuario = @mysql_query($SQL) or die("Erro no banco de dados!");
 			$total = $usuario->num_rows;
@@ -98,7 +98,7 @@ class BancoMysql{
 						INNER JOIN sistemas ON sistemas.id_sistema = empresa_sistema.fk_sistema
 						INNER JOIN usuario_empresa_sistema ON usuario_empresa_sistema.fk_empresa_sistema = empresa_sistema.id_empresa_sistema
 						INNER JOIN usuarios ON usuarios.id_usuario = usuario_empresa_sistema.fk_usuario
-						WHERE USUARIOS.id_usuario = " . $idUsuario;
+						WHERE usuarios.id_usuario = " . $idUsuario;
 				
 			echo $sql;
 			$sistemas = $this->conexao_banco->query($sql);

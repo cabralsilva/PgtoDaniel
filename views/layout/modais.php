@@ -141,7 +141,7 @@
 				banco : operadoras
 			},
 			success : function(e) {
-// 				console.log(e);
+				console.log(e);
 				if (e !== 'null') {
 					var obj = JSON.parse(e);
 // 					console.log(obj);

@@ -484,15 +484,11 @@ div.barcode {
 
 
 @media print {
-
-#instructions {
-	height: 1px;
-	visibility: hidden;
-	overflow: hidden;
-}
-
-
-
+	#instructions {
+		height: 1px;
+		visibility: hidden;
+		overflow: hidden;
+	}
 }
 .linha-cb-preta {
   height: 50px;/*Altura da linha*/
@@ -522,7 +518,8 @@ p, h2 {
 		<h1><?php echo $dadosboleto["identificacao"]; ?> <?php echo isset($dadosboleto["cpf_cnpj"]) ? $dadosboleto["cpf_cnpj"] : '' ?></h1>
 		<address><?php //echo $dadosboleto["endereco"]; ?><br></address>
 		<address><?php //echo $dadosboleto["cidade_uf"]; ?></address>
-	</div>	<!-- id="instr_header" -->
+	</div>	
+	<!-- id="instr_header" -->
 
 <!-- 	<div id=""> -->
 <!--
@@ -564,18 +561,27 @@ p, h2 {
 		<div class="cut">
 			<p>Corte na linha pontilhada</p>
 		</div>
-    <table cellspacing=0 cellpadding=0 width=666 border=0><TBODY><TR><TD class=ct width=666><div align=right><b class=cp>Recibo
-do Pagador</b></div></TD></tr></tbody></table>
+	    <table cellspacing=0 cellpadding=0 width=666 border=0>
+	    	<TBODY>
+	    		<TR>
+	    			<TD class=ct width=666>
+				    	<div align=right>
+				    		<b class=cp>Recibo do Pagador</b>
+				    	</div>
+			    	</TD>
+			    </tr>
+			</tbody>
+		</table>
 		<table class="header" border=0 cellspacing="0" cellpadding="0">
-		<tbody>
-		<tr>
-			<td width=150><IMG SRC="http://<?= $_SERVER['HTTP_HOST'] ?>/sii/iboltpag/util/boletos/imagens/logobb.jpg"></td>
-			<td width=50>
-        <div class="field_cod_banco"><?php echo $dadosboleto["codigo_banco_com_dv"]?></div>
-			</td>
-			<td class="linha_digitavel"><?php echo $dadosboleto["linha_digitavel"]?></td>
-		</tr>
-		</tbody>
+			<tbody>
+				<tr>
+					<td width=150><IMG SRC="http://<?= $_SERVER['HTTP_HOST'] ?>/iboltpag/util/boletos/imagens/logobb.jpg"></td>
+					<td width=50>
+	        			<div class="field_cod_banco"><?php echo $dadosboleto["codigo_banco_com_dv"]?></div>
+					</td>
+					<td class="linha_digitavel"><?php echo $dadosboleto["linha_digitavel"]?></td>
+				</tr>
+			</tbody>
 		</table>
 
 		<table class="line" cellspacing="0" cellpadding="0">
@@ -859,7 +865,10 @@ do Pagador</b></div></TD></tr></tbody></table>
 		</tr>
 		</tbody>
 		</table>		
-    <table cellspacing=0 cellpadding=0 width=666 border=0><TBODY><TR><TD width=666 align=right ><font style="font-size: 10px;">Autentica&ccedil;&atilde;o mec&acirc;nica - Ficha de Compensação</font></TD></tr></tbody></table>
+    	<table cellspacing=0 cellpadding=0 width=666 border=0>
+    		<TBODY><TR><TD width=666 align=right ><font style="font-size: 10px;">Autentica&ccedil;&atilde;o mec&acirc;nica - Ficha de Compensação</font></TD></tr>
+    		</tbody>
+    	</table>
 		<div class="barcode">
 			<p><?php fbarcode($dadosboleto["codigo_barras"]); ?></p>
 		</div>

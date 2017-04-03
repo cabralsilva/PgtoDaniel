@@ -94,6 +94,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<th class="col-md-1"><center>STATUS</center></th>
 															<th class="col-md-1"><center>DATA STATUS</center></th>
 															<th class="col-md-1"><center>FORMA PAGAMENTO</center></th>
+															<th class="col-md-1"><center>OPERADORA</center></th>
 															<th class="col-md-1 alignright">VALOR</th>
 															<th class="col-md-1"><center></center></th>
 														</tr>
@@ -102,7 +103,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 													<?php foreach($hc->getListPagamentosBoletosPendentes() as $pagamento){?>
 														<tr class='linha_relatorio'>
 															<td class="col-md-1 valign"><center><?= $pagamento ["descricao_origem"] ?></center></td>
-															<td class="col-md-1 valign"><center><?= $pagamento["nosso_numero"]?></center></td>
+															<td class="col-md-1 valign"><center><?= $pagamento["identificador"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_origem"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_pagamento"]?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_criacao_origem"])) ?></center></td>
@@ -111,10 +112,14 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<td class="col-md-1 valign"><center><?= $pagamento["estado"] ?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_movimentacao"])) ?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["descricao_forma_pagamento"]?></center></td>
+															<td class="col-md-1 valign"><center>
+																<span href="#" data-toggle="tooltip" title="<?= $pagamento["nome_operadora"]?> - Ag: <?= $pagamento["numero_agencia"]?> - CC:<?= $pagamento["numero_conta"]?> - Cart: <?= $pagamento["codigo_carteira"]?>">
+																	<img alt="Operadora" src="<?= BaseProjeto ?>/util/boletos/<?= $pagamento["diretorio_logo"]?>" width="40px">
+																</span>
+																</center></td>
 															<td class="col-md-1 valign" align='right'>R$ <?php echo number_format($pagamento['valor_transacao'], 2, ',', '.'); ?></td>
 															<td class="col-md-1 valign" align='right'>
-																<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-																	data-idt="<?= $pagamento['id_transacao'] ?>"
+																<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-idt="<?= $pagamento['id_transacao'] ?>"
 																	onclick="imprimirBoleto(this)">Boleto</button>
 															</td>
 														</tr>														
@@ -141,6 +146,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<th class="col-md-1"><center>STATUS</center></th>
 															<th class="col-md-1"><center>DATA STATUS</center></th>
 															<th class="col-md-1"><center>FORMA PAGAMENTO</center></th>
+															<th class="col-md-1"><center>OPERADORA</center></th>
 															<th class="col-md-1 alignright">VALOR</th>
 															<th class="col-md-1"><center></center></th>
 														</tr>
@@ -149,7 +155,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 													<?php foreach($hc->getListPagamentosBoletosRemessaPendentes() as $pagamento){?>
 														<tr class='linha_relatorio'>
 															<td class="col-md-1 valign"><center><?= $pagamento ["descricao_origem"] ?></center></td>
-															<td class="col-md-1 valign"><center><?= $pagamento["nosso_numero"]?></center></td>
+															<td class="col-md-1 valign"><center><?= $pagamento["identificador"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_origem"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_pagamento"]?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_criacao_origem"])) ?></center></td>
@@ -158,6 +164,10 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<td class="col-md-1 valign"><center><?= $pagamento["estado"] ?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_movimentacao"])) ?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["descricao_forma_pagamento"]?></center></td>
+															<td class="col-md-1 valign"><center>
+																<span href="#" data-toggle="tooltip" title="<?= $pagamento["nome_operadora"]?> - Ag: <?= $pagamento["numero_agencia"]?> - CC:<?= $pagamento["numero_conta"]?> - Cart: <?= $pagamento["codigo_carteira"]?>">
+																	<img alt="Operadora" src="<?= BaseProjeto ?>/util/boletos/<?= $pagamento["diretorio_logo"]?>" width="40px">
+																</span></center></td>
 															<td class="col-md-1 valign" align='right'>R$ <?php echo number_format($pagamento['valor_transacao'], 2, ',', '.'); ?></td>
 															<td class="col-md-1 valign" align='right'>
 																<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
@@ -188,6 +198,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<th class="col-md-1"><center>STATUS</center></th>
 															<th class="col-md-1"><center>DATA STATUS</center></th>
 															<th class="col-md-1"><center>FORMA PAGAMENTO</center></th>
+															<th class="col-md-1"><center>OPERADORA</center></th>
 															<th class="col-md-1 alignright">VALOR</th>
 															<th class="col-md-1"><center></center></th>
 														</tr>
@@ -196,7 +207,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 													<?php foreach($hc->getListPagamentosBoletosRetornoPendentes() as $pagamento){?>
 														<tr class='linha_relatorio'>
 															<td class="col-md-1 valign"><center><?= $pagamento ["descricao_origem"] ?></center></td>
-															<td class="col-md-1 valign"><center><?= $pagamento["nosso_numero"]?></center></td>
+															<td class="col-md-1 valign"><center><?= $pagamento["identificador"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_origem"]?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["codigo_pagamento"]?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_criacao_origem"])) ?></center></td>
@@ -205,6 +216,10 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															<td class="col-md-1 valign"><center><?= $pagamento["estado"] ?></center></td>
 															<td class="col-md-1 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_movimentacao"])) ?></center></td>
 															<td class="col-md-1 valign"><center><?= $pagamento["descricao_forma_pagamento"]?></center></td>
+															<td class="col-md-1 valign"><center>
+																<span href="#" data-toggle="tooltip" title="<?= $pagamento["nome_operadora"]?> - Ag: <?= $pagamento["numero_agencia"]?> - CC:<?= $pagamento["numero_conta"]?> - Cart: <?= $pagamento["codigo_carteira"]?>">
+																	<img alt="Operadora" src="<?= BaseProjeto ?>/util/boletos/<?= $pagamento["diretorio_logo"]?>" width="40px">
+																</span></center></td>
 															<td class="col-md-1 valign" align='right'>R$ <?php echo number_format($pagamento['valor_transacao'], 2, ',', '.'); ?></td>
 															<td class="col-md-1 valign" align='right'>
 																<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
@@ -335,7 +350,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 															</thead>
 															<tbody>
 																<tr class="success">
-																	<td class="col-md-4 valign"><center><?= $pagamento["nosso_numero"]?></center></td>
+																	<td class="col-md-4 valign"><center><?= $pagamento["identificador"]?></center></td>
 																	<td class="col-md-4 valign"><center><?= $pagamento["nome_pagador"]?></center></td>
 																	<td class="col-md-4 valign"><center><?= date("d/m/Y", strtotime($pagamento["data_hora_transacao"])) ?></center></td>
 																</tr>
@@ -415,6 +430,7 @@ date_default_timezone_set ( 'America/Sao_Paulo' );
 				var idPagamento = $(this).data("idpagamento");
 				$(".iconmorefinfocartoespendentes-" + idPagamento).addClass('glyphicon-plus').removeClass('glyphicon-minus');
 		  	});
+		    $('[data-toggle="tooltip"]').tooltip(); 
 		});
 
 		function prepararBaixa(elem){

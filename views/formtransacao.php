@@ -505,8 +505,7 @@
 		}
 
 		$("#frmTransaction").submit(function(e) {
-		    e.preventDefault();
-		    
+		    e.preventDefault();  
 		});
 	</script>
 	</body>

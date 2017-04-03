@@ -31,7 +31,6 @@ $codigobanco = "001";
 $codigo_banco_com_dv = geraCodigoBanco($codigobanco);
 $nummoeda = "9";
 $fator_vencimento = fator_vencimento($dadosboleto["data_vencimento"]);
-
 //valor tem 10 digitos, sem virgula
 $valor = formata_numero($dadosboleto["valor_boleto"],10,0,"valor");
 //agencia � sempre 4 digitos
@@ -64,7 +63,7 @@ if ($dadosboleto["formatacao_convenio"] == "7") {
 	$dv=modulo_11("$codigobanco$nummoeda$fator_vencimento$valor$livre_zeros$convenio$nossonumero$carteira");
 	$linha="$codigobanco$nummoeda$dv$fator_vencimento$valor$livre_zeros$convenio$nossonumero$carteira";
 	echo "<br> $valor <br>";
-  	$nossonumero = $convenio.$nossonumero;
+//   	$nossonumero = $convenio.$nossonumero;
 	//N�o existe DV na composi��o do nosso-n�mero para conv�nios de sete posi��es
 }
 
@@ -214,7 +213,7 @@ while (strlen($texto) > 0) {
 
 <div class="linha-cb-preta" style="border-left: <?= $largo?>px solid;"></div>
 <div class="linha-cb-branca" style="border-left: <?= $fino?>px solid;"></div>
-<div class="linha-cb-preta" style="border-left: 1px solid;"></div>
+<div class="linha-cb-preta" style="border-left: <?= $fino?>px solid;"></div>
 
   <?php
 } //Fim da fun��o
